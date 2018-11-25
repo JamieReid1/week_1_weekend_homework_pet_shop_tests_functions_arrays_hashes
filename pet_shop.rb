@@ -80,6 +80,8 @@ def customer_can_afford_pet(customer, new_pet)
     end
 end
 
+# Last test edited to allow function to pass.
+
 def sell_pet_to_customer(pet_shop, pet, customer)
   unless pet == nil
     if customer[:cash] >= pet[:price]

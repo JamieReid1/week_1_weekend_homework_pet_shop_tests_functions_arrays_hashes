@@ -179,8 +179,8 @@ class TestPetShop < Minitest::Test
     assert_equal(true, can_buy_pet)
   end
 
-  #These are 'integration' tests so we want multiple asserts.
-  #If one fails the entire test should fail
+  # These are 'integration' tests so we want multiple asserts.
+  # If one fails the entire test should fail.
 
   def test_sell_pet_to_customer__pet_found
     customer = @customers[0]
@@ -214,6 +214,9 @@ class TestPetShop < Minitest::Test
 
     assert_equal(0, customer_pet_count(customer))
     assert_equal(0, pets_sold(@pet_shop))
+    # Changes made to test:
+    # - @customers[1] "Zsolt" :cash => 50
+    # - customer_cash(@pet_shop) -> customer_cash(customer) to match function.
     assert_equal(50, customer_cash(customer))
     assert_equal(1000, total_cash(@pet_shop))
   end
